@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   // ! copy to /favicon folder
   icons: {
     icon: '/favicon/favicon.ico',
-    shortcut: '/favicon/favicon-16x16.png',
-    apple: '/favicon/apple-touch-icon.png',
+    shortcut: '/favicon/favicon.ico',
+    apple: '/favicon/apple-icon.png',
   },
   manifest: `/favicon/site.webmanifest`,
   openGraph: {
