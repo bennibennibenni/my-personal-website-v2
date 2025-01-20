@@ -3,6 +3,7 @@ import chitChat from '@/assets/images/chit-chat.webp';
 import covidTracker from '@/assets/images/covid-case-tracker.webp';
 import cuanCalc2 from '@/assets/images/cuan-cal-v2.webp';
 import cuanCalc from '@/assets/images/cuan-cal.webp';
+import eatery from '@/assets/images/eatery.webp';
 import personalWebsite from '@/assets/images/personal-website.webp';
 import storyLife from '@/assets/images/story-life.webp';
 import vanillaWebsite from '@/assets/images/vanilla-website.webp';
@@ -368,7 +369,7 @@ const Main: React.FC<MainProps> = ({
           <NextImage
             useSkeleton
             src={personalWebsite}
-            alt='A dinosaur'
+            alt='personal-website'
             sizes='(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw'
@@ -399,7 +400,7 @@ const Main: React.FC<MainProps> = ({
           <NextImage
             useSkeleton
             src={chitChat}
-            alt='A dinosaur'
+            alt='chit-chat'
             sizes='(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
                   33vw'
@@ -425,7 +426,7 @@ const Main: React.FC<MainProps> = ({
             <NextImage
               useSkeleton
               src={cuanCalc2}
-              alt='A dinosaur'
+              alt='cuan-calc-2'
               sizes='(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw'
@@ -454,7 +455,7 @@ const Main: React.FC<MainProps> = ({
             <NextImage
               useSkeleton
               src={covidTracker}
-              alt='A dinosaur'
+              alt='covid-tracker'
               sizes='(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw'
@@ -484,7 +485,7 @@ const Main: React.FC<MainProps> = ({
             <NextImage
               useSkeleton
               src={vanillaWebsite}
-              alt='A dinosaur'
+              alt='vanilla-website'
               sizes='(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw'
@@ -495,6 +496,36 @@ const Main: React.FC<MainProps> = ({
             <li>Vanilla Javascript</li>
             <li>Semantic HTML</li>
             <li>Mobile responsive</li>
+          </ul>
+        </div>
+        <div className='project'>
+          <h3 className='project-name'>
+            <a
+              href='https://eateryyy.netlify.app/#/home'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Eatery
+            </a>
+          </h3>
+          <span>
+            <NextImage
+              useSkeleton
+              src={eatery}
+              alt='eatery'
+              sizes='(max-width: 768px) 100vw,
+                       (max-width: 1200px) 50vw,
+                       33vw'
+              style={{ height: '100%', width: '100%', borderRadius: '4px' }}
+            />
+          </span>
+          <ul className='row-project'>
+            <li>Vanilla Javascript</li>
+            <li>Eslint for linting</li>
+            <li>Integration test with Karma</li>
+            <li>E2E testing with Codecept</li>
+            <li>Image Optimization with Imagemin</li>
+            <li>Progressive Web Apps / PWA</li>
           </ul>
         </div>
         <div className='project'>
@@ -511,7 +542,7 @@ const Main: React.FC<MainProps> = ({
             <NextImage
               useSkeleton
               src={bookshelfWebstorage}
-              alt='A dinosaur'
+              alt='bookshelf-webstorage'
               sizes='(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw'
@@ -538,7 +569,7 @@ const Main: React.FC<MainProps> = ({
             <NextImage
               useSkeleton
               src={storyLife}
-              alt='A dinosaur'
+              alt='story-life'
               sizes='(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw'
@@ -566,7 +597,7 @@ const Main: React.FC<MainProps> = ({
             <NextImage
               useSkeleton
               src={cuanCalc}
-              alt='A dinosaur'
+              alt='cuan-calc'
               sizes='(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw'
