@@ -34,11 +34,13 @@ export default function NextImage({
   );
   const widthIsSet = className?.includes('custom-width') ?? false;
 
-  const imageClassName =
-    `${classNames?.image || ''} ${status === 'loading' ? `image-loading ${classNames?.blur || ''}` : ''}`.trim();
+  const imageClassName = (
+    (classNames?.image || '') +
+    (status === 'loading' ? ` image-loading ${classNames?.blur || ''}` : '')
+  ).trim();
   return (
     <figure
-      style={!widthIsSet ? { width: `${width}px` } : undefined}
+      style={widthIsSet ? undefined : { width: `${width}px` }}
       className={className}
     >
       <Image

@@ -11,12 +11,24 @@ import NextImage from '@/components/next-image';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import React, { useState } from 'react';
 import { DiScrum } from 'react-icons/di';
-import { FaAngular, FaBootstrap, FaCss3, FaGitAlt, FaGithub, FaHtml5, FaJs, FaLaravel, FaLinkedin, FaNodeJs, FaReact, FaSass } from 'react-icons/fa';
+import {
+  FaAngular,
+  FaBootstrap,
+  FaCss3,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaJs,
+  FaLaravel,
+  FaLinkedin,
+  FaNodeJs,
+  FaReact,
+  FaSass,
+} from 'react-icons/fa';
 import { IoLogoIonic } from 'react-icons/io';
-import { RiNextjsFill } from 'react-icons/ri';
-import { RiGatsbyFill } from 'react-icons/ri';
-import { SiVite } from 'react-icons/si';
-import { SiJira } from 'react-icons/si';
+import { RiNextjsFill, RiGatsbyFill } from 'react-icons/ri';
+import { SiVite, SiJira, SiQuarkus } from 'react-icons/si';
+import { BiLogoSpringBoot } from 'react-icons/bi';
 import { toast, ToastContainer } from 'react-tiny-toast';
 
 interface MainProps {
@@ -128,6 +140,12 @@ const Main: React.FC<MainProps> = ({
             <RiNextjsFill /> Next.js
           </div>
           <div className='icon-stack'>
+            <BiLogoSpringBoot /> Springboot
+          </div>
+          <div className='icon-stack'>
+            <SiQuarkus /> Quarkus
+          </div>
+          <div className='icon-stack'>
             <RiGatsbyFill /> Gatsby
           </div>
           <div className='icon-stack'>
@@ -197,8 +215,23 @@ const Main: React.FC<MainProps> = ({
         style={{ display: 'none' }}
       >
         <h2 className='major'>Experience</h2>
+        <h3>Principal Engineer - AIA Singapore (March 2025 - Present)</h3>
+        <ul className='row'>
+          <li>
+            Actively participating in the Elevate POSEZ project, contributing to
+            both frontend and backend development. On the backend side, working
+            with technologies such as Spring Boot and Quarkus to build scalable
+            and efficient APIs and microservices.
+          </li>
+          <li>
+            Mentoring and grooming frontend developers, providing guidance on
+            coding best practices, component-based architecture, and system
+            design specifically focused on frontend development.
+          </li>
+        </ul>
         <h3>
-          Senior Software Engineer - AIA Singapore (February 2023 - Present)
+          Senior Software Engineer - AIA Singapore (February 2023 - February
+          2025)
         </h3>
         <ul className='row'>
           <li>
@@ -680,30 +713,6 @@ const Main: React.FC<MainProps> = ({
               <FaLinkedin />
             </a>
           </li>
-          {/* <li>
-            <a
-              href='https://www.instagram.com/bennibennibenni'
-              className='icon fa-instagram'
-            >
-              <FaInstagram />
-            </a>
-          </li>
-          <li>
-            <a
-              href='https://www.facebook.com/bennibennibenni'
-              className='icon fa-facebook'
-            >
-              <FaFacebook />
-            </a>
-          </li>
-          <li>
-            <a
-              href='https://www.twitter.com/bennibennibenni'
-              className='icon fa-twitter'
-            >
-              <FaTwitter />
-            </a>
-          </li> */}
         </ul>
         {closeArticle}
       </article>
