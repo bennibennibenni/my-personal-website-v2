@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://www.benni.my.id">
-    <img alt="project-logo" src="https://benni.my.id/icons/icon-144x144.png?v=afbdfd42d2dbb0adb2e34ee0f729d9ba" height="200px" />
+    <img alt="project-logo" src="https://www.benni.my.id/favicon/web-app-manifest-192x192.png" height="200px" />
   </a>
 </div>
 
