@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 
 import { showcaseData } from '@/data/showcase';
 
@@ -17,6 +19,30 @@ export const ShowcaseArticle: React.FC<ShowcaseArticleProps> = ({
   articleTimeout,
   onClose,
 }) => {
+  // Pre-cache all showcase images in the background on mount or idle time
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const preloadShowcaseImages = () => {
+      showcaseData.forEach((project) => {
+        if (typeof project.image === 'object' && project.image?.src) {
+          const img = new window.Image();
+          img.src = project.image.src;
+        }
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      const handle = window.requestIdleCallback(preloadShowcaseImages, {
+        timeout: 2000,
+      });
+      return () => window.cancelIdleCallback(handle);
+    } else {
+      const timer = setTimeout(preloadShowcaseImages, 500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <ArticleWrapper
       id='showcase'
@@ -26,7 +52,7 @@ export const ShowcaseArticle: React.FC<ShowcaseArticleProps> = ({
       onClose={onClose}
     >
       <div className='showcase-timeline'>
-        {showcaseData.map((project) => (
+        {showcaseData.map((project, index) => (
           <div key={project.title} className='project showcase-item'>
             <h3 className='project-name'>
               <a href={project.url} target='_blank' rel='noopener noreferrer'>
@@ -38,7 +64,8 @@ export const ShowcaseArticle: React.FC<ShowcaseArticleProps> = ({
               src={project.image}
               alt={project.alt}
               sizes='(max-width: 768px) 100vw, 800px'
-              quality={90}
+              quality={85}
+              priority={index < 2}
               style={{ width: '100%', height: 'auto', borderRadius: '4px' }}
             />
             <ul className='row-project'>

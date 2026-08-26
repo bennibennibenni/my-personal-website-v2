@@ -28,6 +28,7 @@ export default function NextImage({
   className,
   classNames,
   style,
+  placeholder,
   ...rest
 }: NextImageProps) {
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -43,8 +44,14 @@ export default function NextImage({
       : height
     : undefined;
 
+  const isStaticImage =
+    typeof src === 'object' && src !== null && 'src' in src;
+  const resolvedPlaceholder =
+    placeholder ?? (isStaticImage && 'blurDataURL' in src ? 'blur' : undefined);
+
   const imageProps = {
     src,
+    placeholder: resolvedPlaceholder,
     ...(width !== undefined ? { width: Number(width) || undefined } : {}),
     ...(height !== undefined ? { height: Number(height) || undefined } : {}),
     ...rest,
