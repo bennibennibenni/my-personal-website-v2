@@ -92,11 +92,23 @@
   #main .stack {
     grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   }
+
+  .row-project {
+    grid-template-columns: 1fr !important;
+    grid-column-gap: 0 !important;
+    row-gap: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
   #main article {
     padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .row-project {
+    grid-template-columns: 1fr !important;
+    grid-column-gap: 0 !important;
+    row-gap: 0.5rem;
   }
 }
 
