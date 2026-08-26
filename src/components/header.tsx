@@ -21,6 +21,7 @@ const Header: React.FC<HeaderProps> = ({ timeout, handleOpenArticle }) => {
           width={220}
           height={220}
           alt='Benni'
+          quality={95}
           priority
           className='header-avatar'
         />

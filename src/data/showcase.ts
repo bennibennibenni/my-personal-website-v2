@@ -1,7 +1,8 @@
 import bookshelfWebstorage from '@/assets/images/bookshelf-webstorage.webp';
 import chitChat from '@/assets/images/chit-chat.webp';
 import covidTracker from '@/assets/images/covid-case-tracker.webp';
-import cuanCalc2 from '@/assets/images/cuan-cal-v2.webp';
+import cuanCalculator from '@/assets/images/cuan-calculator.webp';
+import daymark from '@/assets/images/daymark.webp';
 import eatery from '@/assets/images/eatery.webp';
 import personalWebsite from '@/assets/images/personal-website.webp';
 import storyLife from '@/assets/images/story-life.webp';
@@ -16,35 +17,50 @@ export const showcaseData: ProjectItem[] = [
     image: personalWebsite,
     alt: 'personal-website',
     features: [
-      'Engineered with Next.js 16 App Router & Turbopack',
-      'Hardware-accelerated GPU particle animations',
-      'Aspect-ratio preserving image skeleton shimmer loading',
-      'Integrated EmailJS contact pipeline with instant feedback',
-      'Offline-capable Progressive Web App (PWA)',
+      'Modern interactive personal portfolio built with Next.js 16 App Router & React 19',
+      'Smooth modal article navigation with GPU-accelerated particle animations',
+      'Full client-side EmailJS contact pipeline with validation & instant feedback',
+      'Aspect-ratio preserving image skeleton shimmer loading & WebP optimization',
+      'Offline-ready Progressive Web App (PWA) with SEO metadata & Google Analytics',
+    ],
+  },
+  {
+    title: 'Daymark',
+    url: 'https://daymark.benni.my.id/',
+    image: daymark,
+    alt: 'daymark',
+    features: [
+      'Team & personal attendance tracking app built with React 19, Vite & Supabase',
+      'Interactive monthly calendar with color-coded status markers (WFO, WFH, Sick, Leave)',
+      'One-tap quick entry logging with frictionless passcode-based authentication',
+      'PostgreSQL backend powered by secure Stored Procedures (RPC) for atomic updates',
+      'Shared team metrics, monthly breakdown analytics, and responsive design',
     ],
   },
   {
     title: 'Chit Chat',
-    url: 'https://chit-chat-omega.vercel.app',
+    url: 'https://chit-chat.benni.my.id/',
     image: chitChat,
     alt: 'chit-chat',
     features: [
-      'Real-time messaging platform built with React',
-      'Bi-directional WebSocket communication via Socket.IO',
-      'Instant message delivery & live active user tracking',
-      'Responsive, lightweight modern chat interface',
+      'Instant room-based messaging platform built with React 18, Node.js & Socket.IO',
+      'Bi-directional WebSocket broadcasting with live user rosters',
+      'Smart message grouping, consecutive bubble collapsing, and native emoji shortcuts',
+      'Persistent dark/light theme switching with automatic system preference detection',
+      'Clean session management via React Context with responsive member drawer',
     ],
   },
   {
-    title: 'Cuan Calculator V2',
-    url: 'https://cuan-calculator-v2.vercel.app/',
-    image: cuanCalc2,
-    alt: 'cuan-calculator-v2',
+    title: 'Cuan Calculator',
+    url: 'https://cuan-calculator.benni.my.id/',
+    image: cuanCalculator,
+    alt: 'cuan-calculator',
     features: [
-      'Modern financial calculation suite built with Next.js 13',
-      'Styled with Tailwind CSS & accessible Radix UI primitives',
-      'Dynamic profit, tax, and investment yield projections',
-      'Responsive design with offline PWA support',
+      'Mobile-first financial calculator suite & PWA built with React 19, Vite 7 & Tailwind CSS v4',
+      'Stock investment toolkit: Profit/Loss, TP/SL, Dividends, Risk Management & Compound Interest',
+      'Money management & utility tools: Fixed Deposit yields, Retirement planning & Live USD/IDR conversion',
+      'Performant form validation pipeline powered by React Hook Form, Yup & React Router 7',
+      'Offline-ready Progressive Web App with Workbox caching & adaptive maskable mobile icons',
     ],
   },
   {

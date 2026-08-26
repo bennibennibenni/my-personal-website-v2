@@ -37,7 +37,8 @@ export const ShowcaseArticle: React.FC<ShowcaseArticleProps> = ({
               useSkeleton
               src={project.image}
               alt={project.alt}
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              sizes='(max-width: 768px) 100vw, 800px'
+              quality={90}
               style={{ width: '100%', height: 'auto', borderRadius: '4px' }}
             />
             <ul className='row-project'>
