@@ -1,5 +1,5 @@
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaSpinner } from 'react-icons/fa';
 import {
   FiAlertCircle,
@@ -36,6 +36,16 @@ export const ContactArticle: React.FC<ContactArticleProps> = ({
     message: string;
   } | null>(null);
 
+  useEffect(() => {
+    if (!notification) return;
+
+    const timer = setTimeout(() => {
+      setNotification(null);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [notification]);
+
   const handleChange = (
     field: string,
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -43,12 +53,17 @@ export const ContactArticle: React.FC<ContactArticleProps> = ({
     setFormData((prev) => ({ ...prev, [field]: event.target.value }));
   };
 
-  const resetForm = () => {
+  const clearFormInputs = () => {
     setFormData({
       name: '',
       email: '',
       message: '',
     });
+  };
+
+  const handleManualReset = () => {
+    clearFormInputs();
+    setNotification(null);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -80,7 +95,7 @@ export const ContactArticle: React.FC<ContactArticleProps> = ({
         title: 'MESSAGE SENT SUCCESSFULLY!',
         message: "Thank you for getting in touch. I'll get back to you soon.",
       });
-      resetForm();
+      clearFormInputs();
     } catch (err) {
       setNotification({
         type: 'error',
@@ -204,7 +219,7 @@ export const ContactArticle: React.FC<ContactArticleProps> = ({
             <button
               type='button'
               className='btn-reset'
-              onClick={resetForm}
+              onClick={handleManualReset}
               disabled={isSubmitting}
             >
               <FiRotateCcw className='btn-icon' />
