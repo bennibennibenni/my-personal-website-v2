@@ -1,55 +1,40 @@
-import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
 
 const eslintConfig = [
-  ...compat.extends(
-    'eslint:recommended',
-    'next',
-    'next/core-web-vitals',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-  ),
+  js.configs.recommended,
   {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.jest,
+        React: true,
+        JSX: true,
+      },
+    },
     plugins: {
       '@typescript-eslint': typescriptEslint,
       'simple-import-sort': simpleImportSort,
       'unused-imports': unusedImports,
     },
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-        React: true,
-        JSX: true,
-      },
-    },
     rules: {
       'no-unused-vars': 'off',
       'no-console': 'warn',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      'react/no-unescaped-entities': 'off',
-      'react/display-name': 'off',
-      'react/jsx-curly-brace-presence': [
-        'warn',
-        {
-          props: 'never',
-          children: 'never',
-        },
-      ],
       '@typescript-eslint/no-unused-vars': 'off',
       'unused-imports/no-unused-imports': 'warn',
       'unused-imports/no-unused-vars': [

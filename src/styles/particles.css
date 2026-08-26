@@ -1,0 +1,229 @@
+/* Space Particle Background & Animations */
+.animation-wrapper,
+.page-bg {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.page-bg {
+  background: radial-gradient(
+    ellipse at bottom,
+    var(--bg-gradient-start, #1b2735) 0%,
+    var(--bg-dark, #090a0f) 100%
+  );
+  background-blend-mode: screen;
+  background-size: cover;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle-bg {
+  background-color: #000;
+  position: fixed !important;
+}
+
+.particle,
+.particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  content: '';
+  position: absolute;
+  top: 2000px;
+}
+
+/* Layer 1: Fine Ambient Dust (1px) */
+.particle-1 {
+  animation: animParticle 100s linear infinite;
+  box-shadow:
+    80px 120px rgba(255, 255, 255, 0.8),
+    190px 430px rgba(255, 255, 255, 0.6),
+    270px 780px rgba(255, 255, 255, 0.75),
+    340px 210px rgba(255, 255, 255, 0.85),
+    420px 950px rgba(255, 255, 255, 0.65),
+    510px 320px rgba(255, 255, 255, 0.8),
+    620px 680px rgba(255, 255, 255, 0.7),
+    710px 1100px rgba(255, 255, 255, 0.85),
+    830px 450px rgba(255, 255, 255, 0.75),
+    940px 890px rgba(255, 255, 255, 0.8),
+    1020px 140px rgba(255, 255, 255, 0.6),
+    1150px 720px rgba(255, 255, 255, 0.85),
+    1240px 1050px rgba(255, 255, 255, 0.7),
+    1360px 380px rgba(255, 255, 255, 0.8),
+    1450px 840px rgba(255, 255, 255, 0.65),
+    1570px 190px rgba(255, 255, 255, 0.85),
+    1680px 620px rgba(255, 255, 255, 0.75),
+    1790px 980px rgba(255, 255, 255, 0.8),
+    1880px 250px rgba(255, 255, 255, 0.65),
+    1960px 760px rgba(255, 255, 255, 0.85),
+    110px 1320px rgba(255, 255, 255, 0.7),
+    240px 1650px rgba(255, 255, 255, 0.8),
+    380px 1890px rgba(255, 255, 255, 0.65),
+    490px 1410px rgba(255, 255, 255, 0.85),
+    580px 1760px rgba(255, 255, 255, 0.75),
+    690px 1280px rgba(255, 255, 255, 0.8),
+    780px 1920px rgba(255, 255, 255, 0.65),
+    890px 1530px rgba(255, 255, 255, 0.85),
+    980px 1840px rgba(255, 255, 255, 0.7),
+    1090px 1370px rgba(255, 255, 255, 0.8),
+    1180px 1690px rgba(255, 255, 255, 0.65),
+    1290px 1980px rgba(255, 255, 255, 0.85),
+    1390px 1460px rgba(255, 255, 255, 0.75),
+    1510px 1790px rgba(255, 255, 255, 0.8),
+    1620px 1340px rgba(255, 255, 255, 0.65),
+    1730px 1870px rgba(255, 255, 255, 0.85),
+    1840px 1520px rgba(255, 255, 255, 0.7),
+    1940px 1950px rgba(255, 255, 255, 0.8);
+}
+
+.particle-1,
+.particle-1:after {
+  border-radius: 50%;
+  height: 1px;
+  width: 1px;
+  will-change: transform;
+}
+
+.particle-1:after {
+  box-shadow: inherit;
+}
+
+/* Layer 2: Medium Stars & Glitter (2px) */
+.particle-2 {
+  animation: animParticle 65s linear infinite;
+  box-shadow:
+    150px 280px rgba(255, 255, 255, 0.95),
+    320px 670px rgba(255, 255, 255, 0.85),
+    480px 150px rgba(255, 255, 255, 0.9),
+    670px 890px rgba(255, 255, 255, 0.8),
+    820px 340px rgba(255, 255, 255, 0.95),
+    1040px 790px rgba(255, 255, 255, 0.85),
+    1210px 220px rgba(255, 255, 255, 0.9),
+    1430px 650px rgba(255, 255, 255, 0.8),
+    1650px 180px rgba(255, 255, 255, 0.95),
+    1820px 830px rgba(255, 255, 255, 0.85),
+    1950px 390px rgba(255, 255, 255, 0.9),
+    90px 1450px rgba(255, 255, 255, 0.95),
+    260px 1820px rgba(255, 255, 255, 0.85),
+    430px 1290px rgba(255, 255, 255, 0.9),
+    610px 1720px rgba(255, 255, 255, 0.8),
+    790px 1380px rgba(255, 255, 255, 0.95),
+    960px 1910px rgba(255, 255, 255, 0.85),
+    1140px 1260px rgba(255, 255, 255, 0.9),
+    1320px 1680px rgba(255, 255, 255, 0.8),
+    1550px 1350px rgba(255, 255, 255, 0.95),
+    1740px 1770px rgba(255, 255, 255, 0.85),
+    1910px 1420px rgba(255, 255, 255, 0.9);
+}
+
+.particle-2,
+.particle-2:after {
+  border-radius: 50%;
+  height: 2px;
+  width: 2px;
+  will-change: transform;
+}
+
+.particle-2:after {
+  box-shadow: inherit;
+}
+
+/* Layer 3: Bright Shimmering Stars (3px) */
+.particle-3 {
+  animation: animParticle 45s linear infinite;
+  box-shadow:
+    220px 380px #ffffff,
+    580px 820px rgba(255, 255, 255, 0.9),
+    910px 250px #ffffff,
+    1350px 710px rgba(255, 255, 255, 0.95),
+    1720px 320px #ffffff,
+    1900px 920px rgba(255, 255, 255, 0.9),
+    180px 1580px #ffffff,
+    540px 1920px rgba(255, 255, 255, 0.95),
+    870px 1440px #ffffff,
+    1260px 1850px rgba(255, 255, 255, 0.9),
+    1640px 1390px #ffffff,
+    1870px 1810px rgba(255, 255, 255, 0.95);
+}
+
+.particle-3,
+.particle-3:after {
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  height: 3px;
+  width: 3px;
+  will-change: transform;
+}
+
+.particle-3:after {
+  box-shadow: inherit;
+}
+
+/* Layer 4: Twinkling Sprinkle Overlay */
+.particle-4 {
+  animation:
+    animParticle 85s linear infinite,
+    particleTwinkle 3.5s ease-in-out infinite alternate;
+  box-shadow:
+    70px 480px rgba(255, 255, 255, 0.95),
+    290px 190px rgba(255, 255, 255, 0.85),
+    460px 750px rgba(255, 255, 255, 0.9),
+    690px 360px rgba(255, 255, 255, 0.95),
+    850px 920px rgba(255, 255, 255, 0.85),
+    1070px 480px rgba(255, 255, 255, 0.9),
+    1280px 890px rgba(255, 255, 255, 0.95),
+    1490px 290px rgba(255, 255, 255, 0.85),
+    1710px 780px rgba(255, 255, 255, 0.9),
+    1920px 440px rgba(255, 255, 255, 0.95),
+    140px 1620px rgba(255, 255, 255, 0.85),
+    360px 1350px rgba(255, 255, 255, 0.9),
+    590px 1830px rgba(255, 255, 255, 0.95),
+    820px 1270px rgba(255, 255, 255, 0.85),
+    1030px 1740px rgba(255, 255, 255, 0.9),
+    1250px 1390px rgba(255, 255, 255, 0.95),
+    1470px 1860px rgba(255, 255, 255, 0.85),
+    1680px 1450px rgba(255, 255, 255, 0.9),
+    1890px 1890px rgba(255, 255, 255, 0.95);
+}
+
+.particle-4,
+.particle-4:after {
+  border-radius: 50%;
+  height: 2.5px;
+  width: 2.5px;
+  will-change: transform, opacity;
+}
+
+.particle-4:after {
+  box-shadow: inherit;
+}
+
+@keyframes animParticle {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+
+@keyframes particleTwinkle {
+  0% {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+  }
+  50% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+  }
+  100% {
+    opacity: 0.45;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  }
+}

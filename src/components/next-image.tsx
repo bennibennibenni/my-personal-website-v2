@@ -1,4 +1,6 @@
-import Image, { ImageProps } from 'next/image';
+'use client';
+
+import Image, { ImageProps, StaticImageData } from 'next/image';
 import * as React from 'react';
 
 type NextImageProps = {
@@ -6,52 +8,74 @@ type NextImageProps = {
   classNames?: {
     image?: string;
     blur?: string;
+    skeleton?: string;
   };
   alt: string;
 } & (
   | { width: string | number; height: string | number }
   | { width?: string | number; height?: string | number }
 ) &
-  ImageProps;
+  Omit<ImageProps, 'src'> & {
+    src: string | StaticImageData;
+  };
 
-/**
- *
- * @description Must set width using `w-` className
- * @param useSkeleton add background with pulse animation, don't use it if image is transparent
- */
 export default function NextImage({
-  useSkeleton = false,
+  useSkeleton = true,
   src,
   width,
   height,
   alt,
   className,
   classNames,
+  style,
   ...rest
 }: NextImageProps) {
-  const [status, setStatus] = React.useState(
-    useSkeleton ? 'loading' : 'complete',
-  );
-  const widthIsSet = className?.includes('custom-width') ?? false;
+  const [isLoaded, setIsLoaded] = React.useState(false);
 
-  const imageClassName = (
-    (classNames?.image || '') +
-    (status === 'loading' ? ` image-loading ${classNames?.blur || ''}` : '')
-  ).trim();
+  const widthStyle = width
+    ? typeof width === 'number'
+      ? `${width}px`
+      : width
+    : undefined;
+  const heightStyle = height
+    ? typeof height === 'number'
+      ? `${height}px`
+      : height
+    : undefined;
+
+  const imageProps = {
+    src,
+    ...(width !== undefined ? { width: Number(width) || undefined } : {}),
+    ...(height !== undefined ? { height: Number(height) || undefined } : {}),
+    ...rest,
+  };
+
   return (
     <figure
-      style={widthIsSet ? undefined : { width: `${width}px` }}
-      className={className}
+      style={{
+        position: 'relative',
+        overflow: 'hidden',
+        width: widthStyle,
+        height: heightStyle,
+        ...style,
+      }}
+      className={`next-image-container ${
+        useSkeleton && !isLoaded ? 'skeleton-loading' : ''
+      } ${className || ''}`.trim()}
     >
+      {useSkeleton && !isLoaded && (
+        <div
+          className={`image-skeleton ${classNames?.skeleton || ''}`.trim()}
+          aria-hidden='true'
+        />
+      )}
       <Image
-        className={imageClassName}
-        src={src}
-        width={width}
-        height={height}
         alt={alt}
-        placeholder={useSkeleton ? 'blur' : 'empty'}
-        onLoad={() => setStatus('complete')}
-        {...rest}
+        className={`next-image ${
+          isLoaded ? 'image-loaded' : 'image-loading'
+        } ${classNames?.image || ''}`.trim()}
+        onLoad={() => setIsLoaded(true)}
+        {...imageProps}
       />
     </figure>
   );

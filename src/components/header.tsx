@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { navigationData } from '@/data/navigation';
+
 import NextImage from '@/components/next-image';
 
-import profilePic from '@/assets/images/profile.webp';
+import profilePic from '@/assets/images/profile.jpg';
 
 interface HeaderProps {
   timeout: boolean;
@@ -12,53 +14,43 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ timeout, handleOpenArticle }) => {
   return (
     <header id='header' style={timeout ? { display: 'none' } : {}}>
-      <NextImage
-        useSkeleton
-        src={profilePic}
-        width='150'
-        height='150'
-        alt='Icon'
-      />
+      <div className='avatar-wrapper'>
+        <NextImage
+          useSkeleton
+          src={profilePic}
+          width={220}
+          height={220}
+          alt='Benni'
+          priority
+          className='header-avatar'
+        />
+      </div>
       <div className='content'>
         <div className='inner'>
           <h1>Benni</h1>
-          <p>
-            I am a punctual and motivated individual who is able to work in a
-            busy environment and produce a high standard of work. In addition, I
-            am also an excellent team worker and able to take instructions from
-            all levels and build up good working relationships with all
-            colleagues. Therefore, I have the ability to manage multiple
-            responsibilities to the highest standard.
+          <p className='title-badge'>
+            Software Engineer • Full-Stack Developer
+          </p>
+          <p className='bio'>
+            I am a motivated and detail-oriented engineer who thrives in dynamic
+            environments and consistently delivers high-quality software
+            solutions. An effective collaborator, I build strong relationships
+            across teams and drive projects to the highest standard.
           </p>
         </div>
       </div>
       <nav>
         <ul>
-          <li>
-            <button onClick={() => handleOpenArticle('tech-stack')}>
-              Tech stack
-            </button>
-          </li>
-          <li>
-            <button onClick={() => handleOpenArticle('education')}>
-              Education
-            </button>
-          </li>
-          <li>
-            <button onClick={() => handleOpenArticle('experience')}>
-              Experience
-            </button>
-          </li>
-          <li>
-            <button onClick={() => handleOpenArticle('showcase')}>
-              Showcase
-            </button>
-          </li>
-          <li>
-            <button onClick={() => handleOpenArticle('contact')}>
-              Contact Me
-            </button>
-          </li>
+          {navigationData.map((item) => (
+            <li key={item.id}>
+              <button
+                type='button'
+                onClick={() => handleOpenArticle(item.id)}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

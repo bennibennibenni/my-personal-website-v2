@@ -5,9 +5,13 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ timeout }) => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer id='footer' style={timeout ? { display: 'none' } : {}}>
-      <p className='copyright'>Copyright &copy; 2025. BENNI </p>
+      <p className='copyright'>
+        &copy; {currentYear} Benni. All rights reserved.
+      </p>
     </footer>
   );
 };

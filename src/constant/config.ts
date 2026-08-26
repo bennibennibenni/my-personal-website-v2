@@ -1,6 +1,6 @@
 export const siteConfig = {
   title: 'Benni | Personal website',
   description:
-    'a personal website to discover a portfolio of projects, skills, experience, and creative insights',
-  url: 'https://www.benni.my.id',
+    'A personal website to discover a portfolio of projects, skills, experience, and creative insights.',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.benni.my.id',
 };
