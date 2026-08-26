@@ -37,47 +37,85 @@
   top: 2000px;
 }
 
-/* Layer 1: Fine Ambient Dust (1px) */
+/* Layer 1: Dense Fine Ambient Dust & Stardust (1px) */
 .particle-1 {
   animation: animParticle 100s linear infinite;
   box-shadow:
-    80px 120px rgba(255, 255, 255, 0.8),
+    40px 80px rgba(255, 255, 255, 0.8),
+    80px 120px rgba(255, 255, 255, 0.85),
+    120px 310px rgba(255, 255, 255, 0.7),
     190px 430px rgba(255, 255, 255, 0.6),
+    230px 610px rgba(255, 255, 255, 0.8),
     270px 780px rgba(255, 255, 255, 0.75),
+    310px 920px rgba(255, 255, 255, 0.65),
     340px 210px rgba(255, 255, 255, 0.85),
+    390px 540px rgba(255, 255, 255, 0.7),
     420px 950px rgba(255, 255, 255, 0.65),
+    470px 110px rgba(255, 255, 255, 0.8),
     510px 320px rgba(255, 255, 255, 0.8),
+    560px 490px rgba(255, 255, 255, 0.65),
     620px 680px rgba(255, 255, 255, 0.7),
+    660px 870px rgba(255, 255, 255, 0.8),
     710px 1100px rgba(255, 255, 255, 0.85),
+    770px 260px rgba(255, 255, 255, 0.7),
     830px 450px rgba(255, 255, 255, 0.75),
+    880px 670px rgba(255, 255, 255, 0.85),
     940px 890px rgba(255, 255, 255, 0.8),
+    990px 330px rgba(255, 255, 255, 0.7),
     1020px 140px rgba(255, 255, 255, 0.6),
+    1090px 520px rgba(255, 255, 255, 0.8),
     1150px 720px rgba(255, 255, 255, 0.85),
+    1200px 910px rgba(255, 255, 255, 0.7),
     1240px 1050px rgba(255, 255, 255, 0.7),
+    1300px 180px rgba(255, 255, 255, 0.8),
     1360px 380px rgba(255, 255, 255, 0.8),
+    1410px 590px rgba(255, 255, 255, 0.65),
     1450px 840px rgba(255, 255, 255, 0.65),
+    1510px 990px rgba(255, 255, 255, 0.8),
     1570px 190px rgba(255, 255, 255, 0.85),
+    1620px 410px rgba(255, 255, 255, 0.7),
     1680px 620px rgba(255, 255, 255, 0.75),
+    1740px 830px rgba(255, 255, 255, 0.85),
     1790px 980px rgba(255, 255, 255, 0.8),
+    1840px 120px rgba(255, 255, 255, 0.7),
     1880px 250px rgba(255, 255, 255, 0.65),
+    1920px 510px rgba(255, 255, 255, 0.8),
     1960px 760px rgba(255, 255, 255, 0.85),
+    60px 1180px rgba(255, 255, 255, 0.75),
     110px 1320px rgba(255, 255, 255, 0.7),
+    180px 1490px rgba(255, 255, 255, 0.85),
     240px 1650px rgba(255, 255, 255, 0.8),
+    310px 1770px rgba(255, 255, 255, 0.7),
     380px 1890px rgba(255, 255, 255, 0.65),
+    440px 1250px rgba(255, 255, 255, 0.8),
     490px 1410px rgba(255, 255, 255, 0.85),
+    540px 1580px rgba(255, 255, 255, 0.7),
     580px 1760px rgba(255, 255, 255, 0.75),
+    640px 1910px rgba(255, 255, 255, 0.85),
     690px 1280px rgba(255, 255, 255, 0.8),
+    740px 1470px rgba(255, 255, 255, 0.7),
     780px 1920px rgba(255, 255, 255, 0.65),
+    840px 1360px rgba(255, 255, 255, 0.8),
     890px 1530px rgba(255, 255, 255, 0.85),
+    940px 1710px rgba(255, 255, 255, 0.75),
     980px 1840px rgba(255, 255, 255, 0.7),
+    1040px 1220px rgba(255, 255, 255, 0.85),
     1090px 1370px rgba(255, 255, 255, 0.8),
+    1140px 1540px rgba(255, 255, 255, 0.7),
     1180px 1690px rgba(255, 255, 255, 0.65),
+    1240px 1870px rgba(255, 255, 255, 0.8),
     1290px 1980px rgba(255, 255, 255, 0.85),
+    1340px 1290px rgba(255, 255, 255, 0.7),
     1390px 1460px rgba(255, 255, 255, 0.75),
+    1460px 1640px rgba(255, 255, 255, 0.85),
     1510px 1790px rgba(255, 255, 255, 0.8),
+    1570px 1940px rgba(255, 255, 255, 0.7),
     1620px 1340px rgba(255, 255, 255, 0.65),
+    1680px 1510px rgba(255, 255, 255, 0.8),
     1730px 1870px rgba(255, 255, 255, 0.85),
+    1790px 1390px rgba(255, 255, 255, 0.75),
     1840px 1520px rgba(255, 255, 255, 0.7),
+    1890px 1730px rgba(255, 255, 255, 0.85),
     1940px 1950px rgba(255, 255, 255, 0.8);
 }
 
@@ -97,27 +135,47 @@
 .particle-2 {
   animation: animParticle 65s linear infinite;
   box-shadow:
+    60px 190px rgba(255, 255, 255, 0.9),
     150px 280px rgba(255, 255, 255, 0.95),
+    240px 490px rgba(255, 255, 255, 0.85),
     320px 670px rgba(255, 255, 255, 0.85),
+    410px 830px rgba(255, 255, 255, 0.9),
     480px 150px rgba(255, 255, 255, 0.9),
+    570px 380px rgba(255, 255, 255, 0.8),
     670px 890px rgba(255, 255, 255, 0.8),
+    740px 520px rgba(255, 255, 255, 0.9),
     820px 340px rgba(255, 255, 255, 0.95),
+    930px 620px rgba(255, 255, 255, 0.85),
     1040px 790px rgba(255, 255, 255, 0.85),
+    1120px 430px rgba(255, 255, 255, 0.9),
     1210px 220px rgba(255, 255, 255, 0.9),
+    1330px 490px rgba(255, 255, 255, 0.85),
     1430px 650px rgba(255, 255, 255, 0.8),
+    1540px 310px rgba(255, 255, 255, 0.9),
     1650px 180px rgba(255, 255, 255, 0.95),
+    1730px 470px rgba(255, 255, 255, 0.8),
     1820px 830px rgba(255, 255, 255, 0.85),
     1950px 390px rgba(255, 255, 255, 0.9),
     90px 1450px rgba(255, 255, 255, 0.95),
+    180px 1620px rgba(255, 255, 255, 0.85),
     260px 1820px rgba(255, 255, 255, 0.85),
+    350px 1240px rgba(255, 255, 255, 0.9),
     430px 1290px rgba(255, 255, 255, 0.9),
+    520px 1560px rgba(255, 255, 255, 0.85),
     610px 1720px rgba(255, 255, 255, 0.8),
+    700px 1430px rgba(255, 255, 255, 0.9),
     790px 1380px rgba(255, 255, 255, 0.95),
+    870px 1650px rgba(255, 255, 255, 0.8),
     960px 1910px rgba(255, 255, 255, 0.85),
+    1050px 1490px rgba(255, 255, 255, 0.9),
     1140px 1260px rgba(255, 255, 255, 0.9),
+    1230px 1570px rgba(255, 255, 255, 0.85),
     1320px 1680px rgba(255, 255, 255, 0.8),
+    1440px 1460px rgba(255, 255, 255, 0.9),
     1550px 1350px rgba(255, 255, 255, 0.95),
+    1640px 1610px rgba(255, 255, 255, 0.85),
     1740px 1770px rgba(255, 255, 255, 0.85),
+    1830px 1290px rgba(255, 255, 255, 0.9),
     1910px 1420px rgba(255, 255, 255, 0.9);
 }
 
@@ -137,16 +195,26 @@
 .particle-3 {
   animation: animParticle 45s linear infinite;
   box-shadow:
+    110px 170px #ffffff,
     220px 380px #ffffff,
+    420px 590px rgba(255, 255, 255, 0.9),
     580px 820px rgba(255, 255, 255, 0.9),
+    760px 190px #ffffff,
     910px 250px #ffffff,
+    1130px 530px rgba(255, 255, 255, 0.95),
     1350px 710px rgba(255, 255, 255, 0.95),
+    1560px 420px #ffffff,
     1720px 320px #ffffff,
     1900px 920px rgba(255, 255, 255, 0.9),
+    80px 1320px #ffffff,
     180px 1580px #ffffff,
+    370px 1740px rgba(255, 255, 255, 0.9),
     540px 1920px rgba(255, 255, 255, 0.95),
+    710px 1280px #ffffff,
     870px 1440px #ffffff,
+    1080px 1690px rgba(255, 255, 255, 0.95),
     1260px 1850px rgba(255, 255, 255, 0.9),
+    1480px 1310px #ffffff,
     1640px 1390px #ffffff,
     1870px 1810px rgba(255, 255, 255, 0.95);
 }
@@ -154,7 +222,7 @@
 .particle-3,
 .particle-3:after {
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.85);
   height: 3px;
   width: 3px;
   will-change: transform;
@@ -168,26 +236,44 @@
 .particle-4 {
   animation:
     animParticle 85s linear infinite,
-    particleTwinkle 3.5s ease-in-out infinite alternate;
+    particleTwinkle 3.2s ease-in-out infinite alternate;
   box-shadow:
     70px 480px rgba(255, 255, 255, 0.95),
+    180px 290px rgba(255, 255, 255, 0.9),
     290px 190px rgba(255, 255, 255, 0.85),
+    380px 620px rgba(255, 255, 255, 0.95),
     460px 750px rgba(255, 255, 255, 0.9),
+    570px 240px rgba(255, 255, 255, 0.85),
     690px 360px rgba(255, 255, 255, 0.95),
+    780px 580px rgba(255, 255, 255, 0.9),
     850px 920px rgba(255, 255, 255, 0.85),
+    960px 150px rgba(255, 255, 255, 0.95),
     1070px 480px rgba(255, 255, 255, 0.9),
+    1180px 670px rgba(255, 255, 255, 0.85),
     1280px 890px rgba(255, 255, 255, 0.95),
+    1390px 340px rgba(255, 255, 255, 0.9),
     1490px 290px rgba(255, 255, 255, 0.85),
+    1600px 520px rgba(255, 255, 255, 0.95),
     1710px 780px rgba(255, 255, 255, 0.9),
+    1820px 210px rgba(255, 255, 255, 0.85),
     1920px 440px rgba(255, 255, 255, 0.95),
+    50px 1480px rgba(255, 255, 255, 0.9),
     140px 1620px rgba(255, 255, 255, 0.85),
+    250px 1270px rgba(255, 255, 255, 0.95),
     360px 1350px rgba(255, 255, 255, 0.9),
+    480px 1720px rgba(255, 255, 255, 0.85),
     590px 1830px rgba(255, 255, 255, 0.95),
+    710px 1390px rgba(255, 255, 255, 0.9),
     820px 1270px rgba(255, 255, 255, 0.85),
+    930px 1640px rgba(255, 255, 255, 0.95),
     1030px 1740px rgba(255, 255, 255, 0.9),
+    1140px 1450px rgba(255, 255, 255, 0.85),
     1250px 1390px rgba(255, 255, 255, 0.95),
+    1360px 1780px rgba(255, 255, 255, 0.9),
     1470px 1860px rgba(255, 255, 255, 0.85),
+    1580px 1290px rgba(255, 255, 255, 0.95),
     1680px 1450px rgba(255, 255, 255, 0.9),
+    1790px 1680px rgba(255, 255, 255, 0.85),
     1890px 1890px rgba(255, 255, 255, 0.95);
 }
 
@@ -203,6 +289,42 @@
   box-shadow: inherit;
 }
 
+/* Layer 5: Glowing Nebula Star Sparkles */
+.particle-5 {
+  animation:
+    animParticle 120s linear infinite,
+    particleGlow 4.5s ease-in-out infinite alternate;
+  box-shadow:
+    140px 260px rgba(210, 235, 255, 0.95),
+    350px 520px rgba(255, 240, 210, 0.9),
+    620px 180px rgba(210, 235, 255, 0.95),
+    890px 730px rgba(255, 240, 210, 0.85),
+    1160px 310px rgba(210, 235, 255, 0.95),
+    1420px 840px rgba(255, 240, 210, 0.9),
+    1690px 250px rgba(210, 235, 255, 0.95),
+    1870px 680px rgba(255, 240, 210, 0.85),
+    220px 1380px rgba(210, 235, 255, 0.9),
+    490px 1640px rgba(255, 240, 210, 0.95),
+    780px 1210px rgba(210, 235, 255, 0.85),
+    1050px 1790px rgba(255, 240, 210, 0.95),
+    1330px 1320px rgba(210, 235, 255, 0.9),
+    1610px 1710px rgba(255, 240, 210, 0.95),
+    1840px 1490px rgba(210, 235, 255, 0.85);
+}
+
+.particle-5,
+.particle-5:after {
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(210, 235, 255, 0.9);
+  height: 2px;
+  width: 2px;
+  will-change: transform, opacity;
+}
+
+.particle-5:after {
+  box-shadow: inherit;
+}
+
 @keyframes animParticle {
   0% {
     transform: translate3d(0, 0, 0);
@@ -215,15 +337,30 @@
 
 @keyframes particleTwinkle {
   0% {
-    opacity: 0.35;
+    opacity: 0.3;
     filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
   }
   50% {
-    opacity: 0.95;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95));
   }
   100% {
-    opacity: 0.45;
+    opacity: 0.4;
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  }
+}
+
+@keyframes particleGlow {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scale(0.9);
   }
 }

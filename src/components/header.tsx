@@ -32,10 +32,16 @@ const Header: React.FC<HeaderProps> = ({ timeout, handleOpenArticle }) => {
             Software Engineer • Full-Stack Developer
           </p>
           <p className='bio'>
-            I am a motivated and detail-oriented engineer who thrives in dynamic
-            environments and consistently delivers high-quality software
-            solutions. An effective collaborator, I build strong relationships
-            across teams and drive projects to the highest standard.
+            A results-driven software engineer passionate about architecting
+            resilient, high-performance web ecosystems and intuitive digital
+            experiences. With a proven track record delivering mission-critical
+            enterprise applications and modernizing legacy codebases, I
+            specialize in the modern React, Next.js, and TypeScript ecosystem
+            alongside robust backend microservices and RESTful APIs built with
+            Spring Boot, Quarkus, and Node.js. I thrive on solving complex
+            full-stack challenges, optimizing runtime performance, and
+            collaborating closely with cross-functional teams to build scalable
+            software that creates real-world impact.
           </p>
         </div>
       </div>

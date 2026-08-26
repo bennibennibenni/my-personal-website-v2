@@ -1,7 +1,6 @@
 import bookshelfWebstorage from '@/assets/images/bookshelf-webstorage.webp';
 import chitChat from '@/assets/images/chit-chat.webp';
 import covidTracker from '@/assets/images/covid-case-tracker.webp';
-import cuanCalc from '@/assets/images/cuan-cal.webp';
 import cuanCalc2 from '@/assets/images/cuan-cal-v2.webp';
 import eatery from '@/assets/images/eatery.webp';
 import personalWebsite from '@/assets/images/personal-website.webp';
@@ -17,7 +16,7 @@ export const showcaseData: ProjectItem[] = [
     image: personalWebsite,
     alt: 'personal-website',
     features: [
-      'Engineered with Next.js 15 App Router & Turbopack',
+      'Engineered with Next.js 16 App Router & Turbopack',
       'Hardware-accelerated GPU particle animations',
       'Aspect-ratio preserving image skeleton shimmer loading',
       'Integrated EmailJS contact pipeline with instant feedback',
@@ -46,18 +45,6 @@ export const showcaseData: ProjectItem[] = [
       'Styled with Tailwind CSS & accessible Radix UI primitives',
       'Dynamic profit, tax, and investment yield projections',
       'Responsive design with offline PWA support',
-    ],
-  },
-  {
-    title: 'Cuan Calculator',
-    url: 'https://bennibennibenni.github.io/cuan-calculator/',
-    image: cuanCalc,
-    alt: 'cuan-calculator',
-    features: [
-      'Intuitive profit & margin calculator built with React',
-      'Zero-latency client-side calculation engine',
-      'Offline-first Progressive Web App (PWA)',
-      'Clean, distraction-free user interface',
     ],
   },
   {
