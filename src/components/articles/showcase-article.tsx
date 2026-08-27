@@ -55,9 +55,13 @@ export const ShowcaseArticle: React.FC<ShowcaseArticleProps> = ({
         {showcaseData.map((project, index) => (
           <div key={project.title} className='project showcase-item'>
             <h3 className='project-name'>
-              <a href={project.url} target='_blank' rel='noopener noreferrer'>
-                {project.title}
-              </a>
+              {project.url ? (
+                <a href={project.url} target='_blank' rel='noopener noreferrer'>
+                  {project.title}
+                </a>
+              ) : (
+                <span>{project.title}</span>
+              )}
             </h3>
             <NextImage
               useSkeleton

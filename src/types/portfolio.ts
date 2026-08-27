@@ -28,7 +28,7 @@ export interface ExperienceItem {
 
 export interface ProjectItem {
   title: string;
-  url: string;
+  url?: string;
   image: StaticImageData;
   alt: string;
   features: string[];

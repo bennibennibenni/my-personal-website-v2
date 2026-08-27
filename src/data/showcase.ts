@@ -43,11 +43,11 @@ export const showcaseData: ProjectItem[] = [
     image: chitChat,
     alt: 'chit-chat',
     features: [
-      'Instant room-based messaging platform built with React 18, Node.js & Socket.IO',
-      'Bi-directional WebSocket broadcasting with live user rosters',
-      'Smart message grouping, consecutive bubble collapsing, and native emoji shortcuts',
-      'Persistent dark/light theme switching with automatic system preference detection',
-      'Clean session management via React Context with responsive member drawer',
+      'Instant room-based messaging platform built with React 19, Vite 8 & Socket.IO v4',
+      'Real-time typing indicators, GPS location sharing & active online member drawer',
+      'User mentions (@You), Web Audio chime alerts, and live server latency monitor',
+      'Smart message grouping, consecutive bubble collapsing & native emoji shortcuts',
+      'Persistent dark/light theme switching with clean Context & sessionStorage state',
     ],
   },
   {
@@ -65,7 +65,7 @@ export const showcaseData: ProjectItem[] = [
   },
   {
     title: 'Story Life',
-    url: 'https://bennibennibenni.github.io/story-life-app/',
+    url: 'https://story-life.benni.my.id/',
     image: storyLife,
     alt: 'story-life',
     features: [
@@ -77,7 +77,7 @@ export const showcaseData: ProjectItem[] = [
   },
   {
     title: 'Eatery Catalogue',
-    url: 'https://eatery-catalogue.netlify.app/',
+    url: 'https://eatery.benni.my.id/',
     image: eatery,
     alt: 'eatery-catalogue',
     features: [
@@ -89,7 +89,7 @@ export const showcaseData: ProjectItem[] = [
   },
   {
     title: 'Covid Case Tracker',
-    url: 'https://covid-case-tracker.vercel.app/',
+    url: 'https://covid-case-tracker.benni.my.id/',
     image: covidTracker,
     alt: 'covid-case-tracker',
     features: [
@@ -101,7 +101,7 @@ export const showcaseData: ProjectItem[] = [
   },
   {
     title: 'Bookshelf Webstorage',
-    url: 'https://bennibennibenni.github.io/bookshelf-webstorage/',
+    url: 'https://bookshelf-webstorage.benni.my.id/',
     image: bookshelfWebstorage,
     alt: 'bookshelf-webstorage',
     features: [
@@ -113,7 +113,7 @@ export const showcaseData: ProjectItem[] = [
   },
   {
     title: 'Simple Vanilla Website',
-    url: 'https://bennibennibenni.github.io/simple-vanilla-website/',
+    url: 'https://simple-vanilla.benni.my.id/',
     image: vanillaWebsite,
     alt: 'simple-vanilla-website',
     features: [
