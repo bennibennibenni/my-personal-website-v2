@@ -69,10 +69,11 @@ export const showcaseData: ProjectItem[] = [
     image: storyLife,
     alt: 'story-life',
     features: [
-      'Interactive geo-storytelling platform built with Webpack',
-      'Modular custom elements built with native Web Components',
-      'Interactive map exploration powered by Mapbox GL API',
-      'Custom SCSS design system with client-side form validation',
+      'Social storytelling platform built with Angular, TypeScript & DummyAPI integration',
+      'Handcrafted PaperCSS design system with wavy sketch borders & tactile ink drop shadows',
+      'Story & post feed with author cards, real-time like toggling & hashtag navigation',
+      'Interactive topic explorer & tag cloud with real-time keyword search filtering',
+      'Creator directory, rich user profiles & threaded community discussion comments',
     ],
   },
   {
