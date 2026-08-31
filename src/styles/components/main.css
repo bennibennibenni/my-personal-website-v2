@@ -491,3 +491,294 @@
     font-size: 0.72rem;
   }
 }
+
+/* Showcase Image Preview & Zoom Overlay */
+.showcase-image-container {
+  border-radius: var(--radius-sm, 4px);
+  cursor: zoom-in;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
+}
+
+.showcase-image-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.showcase-image-container:hover img {
+  transform: scale(1.025);
+}
+
+.showcase-image-container img {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.showcase-image-overlay {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.showcase-image-container:hover .showcase-image-overlay,
+.showcase-image-container:focus-visible .showcase-image-overlay {
+  opacity: 1;
+}
+
+.showcase-image-badge {
+  align-items: center;
+  backdrop-filter: blur(6px);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.85rem;
+  transform: translateY(4px);
+  transition: transform 0.2s ease;
+}
+
+.showcase-image-container:hover .showcase-image-badge {
+  transform: translateY(0);
+}
+
+/* Image Preview Lightbox Modal */
+.image-preview-backdrop {
+  align-items: center;
+  animation: previewFadeIn 0.25s ease-out forwards;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(4, 7, 12, 0.9);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  padding: 1.5rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  user-select: none;
+  z-index: 999999;
+}
+
+@keyframes previewFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-preview-content {
+  align-items: center;
+  animation: previewScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: flex;
+  flex-direction: column;
+  max-height: 94vh;
+  max-width: 92vw;
+  position: relative;
+}
+
+@keyframes previewScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.image-preview-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding: 0 0.25rem;
+  width: 100%;
+}
+
+.image-preview-title {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+
+.image-preview-actions {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.image-preview-hint {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
+}
+
+.image-preview-close {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  color: #ffffff !important;
+  cursor: pointer;
+  display: flex !important;
+  font-size: 1.15rem;
+  height: 2.25rem !important;
+  justify-content: center;
+  min-width: unset !important;
+  padding: 0 !important;
+  transition: all 0.2s ease-in-out;
+  width: 2.25rem !important;
+}
+
+.image-preview-close:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transform: scale(1.08);
+}
+
+.image-preview-img-wrapper {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm, 6px);
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.9);
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  max-height: 82vh;
+  max-width: 92vw;
+  min-height: 280px;
+  min-width: min(520px, 88vw);
+  overflow: hidden;
+  position: relative;
+}
+
+.image-preview-skeleton {
+  align-items: center;
+  animation: skeleton-shimmer 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.03) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: inherit;
+  display: flex;
+  height: 100%;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.image-preview-spinner {
+  animation: previewSpin 0.85s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+@keyframes previewSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image-preview-img {
+  display: block;
+  height: auto;
+  max-height: 82vh;
+  max-width: 92vw;
+  object-fit: contain;
+  transition: opacity 0.35s ease-in-out;
+  width: auto;
+  z-index: 2;
+}
+
+.image-preview-img.image-loading {
+  opacity: 0;
+}
+
+.image-preview-img.image-loaded {
+  opacity: 1;
+}
+
+@media screen and (max-width: 736px) {
+  .image-preview-backdrop {
+    padding: 1rem 0.75rem;
+  }
+
+  .image-preview-header {
+    margin-bottom: 0.5rem;
+  }
+
+  .image-preview-title {
+    font-size: 0.95rem;
+  }
+
+  .image-preview-hint {
+    display: none;
+  }
+
+  .image-preview-img-wrapper {
+    max-height: 78vh;
+    min-height: 220px;
+    min-width: 86vw;
+  }
+
+  .image-preview-img {
+    max-height: 78vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .showcase-image-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .image-preview-img-wrapper {
+    max-height: 72vh;
+    min-height: 180px;
+    min-width: 86vw;
+  }
+
+  .image-preview-img {
+    max-height: 72vh;
+  }
+}
