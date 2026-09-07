@@ -78,6 +78,16 @@
   background-color: var(--bg-hover, hsla(0, 0%, 100%, 0.075));
 }
 
+/* Hide the box outline on the close button; show focus on the icon instead */
+#main article .close:focus-visible {
+  outline: none;
+}
+
+#main article .close:focus-visible:before {
+  background-color: var(--bg-hover, hsla(0, 0%, 100%, 0.075));
+  box-shadow: 0 0 0 1px var(--border-light, rgba(255, 255, 255, 0.5));
+}
+
 #main article .close:active:before {
   background-color: var(--bg-active, hsla(0, 0%, 100%, 0.175));
 }
