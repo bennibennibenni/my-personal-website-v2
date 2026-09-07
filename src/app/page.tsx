@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import '@/lib/env';
 
 import Footer from '@/components/footer';
 import Header from '@/components/header';
@@ -16,7 +15,6 @@ export default function HomePage() {
   const [timeoutState, setTimeoutState] = useState(false);
   const [articleTimeout, setArticleTimeout] = useState(false);
   const [article, setArticle] = useState('');
-  const [loading, setLoading] = useState('is-loading');
 
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -49,10 +47,6 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setLoading('');
-    }, 100);
-
     const handleClickOutside = (event: MouseEvent) => {
       if (event.button !== 0) return;
       if (!isArticleVisible || !modalRef.current) return;
@@ -75,7 +69,6 @@ export default function HomePage() {
     document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      clearTimeout(timeoutId);
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isArticleVisible, handleCloseArticle]);
@@ -92,9 +85,7 @@ export default function HomePage() {
         </div>
       </div>
       <div
-        className={`body ${loading} ${
-          isArticleVisible ? 'is-article-visible' : ''
-        }`}
+        className={`body ${isArticleVisible ? 'is-article-visible' : ''}`}
       >
         <div id='wrapper'>
           <Header

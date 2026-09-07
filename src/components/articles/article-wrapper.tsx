@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 interface ArticleWrapperProps {
   id: string;
@@ -29,10 +29,10 @@ export const ArticleWrapper: React.FC<ArticleWrapperProps> = ({
     >
       <h2 className='major'>{title}</h2>
       {children}
-      <div
+      <button
+        type='button'
         className='close'
         onClick={onClose}
-        role='presentation'
         aria-label={`Close ${title}`}
       />
     </article>

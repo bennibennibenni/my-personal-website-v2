@@ -40,9 +40,15 @@
 }
 
 #main article .close {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
   display: block;
   height: 4rem;
   overflow: hidden;
+  padding: 0;
   position: absolute;
   right: 0;
   text-indent: 4rem;

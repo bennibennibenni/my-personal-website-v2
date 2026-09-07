@@ -1,4 +1,4 @@
-﻿/* Baseline CSS Reset */
+/* Baseline CSS Reset */
 a,
 abbr,
 acronym,
@@ -135,6 +135,14 @@ table {
 :after,
 :before {
   box-sizing: border-box;
+}
+
+/* Keyboard focus visibility for interactive elements */
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid var(--text-primary, #fff);
+  outline-offset: 3px;
 }
 
 @media screen and (max-width: 480px) {

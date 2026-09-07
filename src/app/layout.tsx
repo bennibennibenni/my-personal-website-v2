@@ -1,10 +1,29 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
+import localFont from 'next/font/local';
 import * as React from 'react';
+import '@/lib/env';
 
 import '@/styles/globals.css';
 
 import { siteConfig } from '@/constant/config';
+
+const sourceSans3 = localFont({
+  src: [
+    {
+      path: './fonts/source-sans-3-latin-wght-normal.woff2',
+      weight: '200 900',
+      style: 'normal',
+    },
+    {
+      path: './fonts/source-sans-3-latin-wght-italic.woff2',
+      weight: '200 900',
+      style: 'italic',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-source-sans',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -19,7 +38,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon/favicon.ico',
     apple: '/favicon/apple-icon.png',
   },
-  manifest: `/favicon/site.webmanifest`,
+  manifest: '/manifest.json',
   openGraph: {
     url: siteConfig.url,
     title: siteConfig.title,
@@ -36,18 +55,17 @@ export const metadata: Metadata = {
   ],
 };
 
+export const viewport: Viewport = {
+  themeColor: '#000000',
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <head>
-        <link rel='manifest' href='/manifest.json' />
-        <link rel='apple-touch-icon' href='/icon-192x192.png' />
-        <meta name='theme-color' content='#000000' />
-      </head>
+    <html lang='en' className={sourceSans3.variable}>
       <body>{children}</body>
       {process.env.NEXT_PUBLIC_GA_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
